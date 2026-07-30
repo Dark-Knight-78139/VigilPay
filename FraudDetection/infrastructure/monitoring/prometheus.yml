@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'monitoring-service'
+    static_configs:
+      - targets: ['monitoring:8005']
+
+  - job_name: 'transaction-generator'
+    static_configs:
+      - targets: ['transaction-generator:8001']
+
+  - job_name: 'feature-engineering'
+    static_configs:
+      - targets: ['feature-engineering:8002']
+
+  - job_name: 'fraud-detection'
+    static_configs:
+      - targets: ['fraud-detection:8003']
+
+  - job_name: 'alert-service'
+    static_configs:
+      - targets: ['alert-service:8004']
